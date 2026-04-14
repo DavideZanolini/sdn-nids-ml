@@ -6,7 +6,7 @@ The sdn-nids-ml project is a software-defined networking (SDN) experiment that i
 
 The network topology used in this experiment is shown below:
 
-![Topology](s/topology.drawio)
+![Topology](assets/topology.drawio.svg)
 
 ## Setup
 
