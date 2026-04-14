@@ -1,5 +1,13 @@
 # sdn-nids-ml
 
+The sdn-nids-ml project is a software-defined networking (SDN) experiment that integrates network intrusion detection and machine learning. It uses Mininet to simulate a network topology, Ryu as the SDN controller, and Docker containers for web and database servers. Traffic flows are captured and processed into features for training machine learning models.
+
+## Network Topology
+
+The network topology used in this experiment is shown below:
+
+![Topology](s/topology.drawio)
+
 ## Setup
 
 Install dependencies:
@@ -41,7 +49,7 @@ sudo bash run_experiment.sh
 In a **4th terminal**, run the flow capture while the experiment is running:
 
 ```bash
-sudo python3 captures/capture_flows.py --iface core-eth1 --timeout 300
+sudo python3 capture_flows.py --iface core-eth1 --timeout 300
 ```
 
 This sniffs packets on `core-eth1`, aggregates them into flows, and saves features to a CSV in `captures/`.
