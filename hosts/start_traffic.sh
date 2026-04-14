@@ -1,0 +1,12 @@
+h11 python3 main/hosts/traffic_gen.py h11 --start-delay 30 &
+h12 python3 main/hosts/traffic_gen.py h12 --start-delay 30 &
+h13 python3 main/hosts/traffic_gen.py h13 --start-delay 30 &
+h14 python3 main/hosts/traffic_gen.py h14 --start-delay 30 &
+h21 python3 main/hosts/traffic_gen.py h21 --start-delay 30 &
+h22 python3 main/hosts/traffic_gen.py h22 --start-delay 30 &
+h23 python3 main/hosts/traffic_gen.py h23 --start-delay 30 &
+h24 python3 main/hosts/traffic_gen.py h24 --start-delay 30 &
+h31 python3 main/hosts/traffic_gen.py h31 --start-delay 30 &
+h32 python3 main/hosts/traffic_gen.py h32 --start-delay 30 &
+h33 python3 main/hosts/traffic_gen.py h33 --start-delay 30 &
+h34 python3 main/hosts/traffic_gen.py h34 --start-delay 30 &
