@@ -1,0 +1,19 @@
+name: ml
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+
+  - numpy=1.26
+  - pandas=2.2
+  - scipy=1.11
+  - scikit-learn=1.4
+
+  - tensorflow=2.15
+
+  - pip
+
+  - pip:
+      - scikeras==0.12.0

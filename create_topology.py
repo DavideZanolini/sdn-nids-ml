@@ -42,6 +42,8 @@ def create_topology():
     h12 = net.addHost('h12', ip='10.0.1.12/24', defaultRoute='via 10.0.1.254')
     h13 = net.addHost('h13', ip='10.0.1.13/24', defaultRoute='via 10.0.1.254')
     h14 = net.addHost('h14', ip='10.0.1.14/24', defaultRoute='via 10.0.1.254')
+    h15 = net.addHost('h15', ip='10.0.1.15/24', defaultRoute='via 10.0.1.254')
+    h16 = net.addHost('h16', ip='10.0.1.16/24', defaultRoute='via 10.0.1.254')
 
     info('*** Adding client hosts (10.0.2.x subnet)\n')
     # Subnet 3: 10.0.2.x
@@ -49,6 +51,8 @@ def create_topology():
     h22 = net.addHost('h22', ip='10.0.2.22/24', defaultRoute='via 10.0.2.254')
     h23 = net.addHost('h23', ip='10.0.2.23/24', defaultRoute='via 10.0.2.254')
     h24 = net.addHost('h24', ip='10.0.2.24/24', defaultRoute='via 10.0.2.254')
+    h25 = net.addHost('h25', ip='10.0.2.25/24', defaultRoute='via 10.0.2.254')
+    h26 = net.addHost('h26', ip='10.0.2.26/24', defaultRoute='via 10.0.2.254')
 
     info('*** Adding client hosts (10.0.3.x subnet)\n')
     # Subnet 4: 10.0.3.x
@@ -56,6 +60,8 @@ def create_topology():
     h32 = net.addHost('h32', ip='10.0.3.32/24', defaultRoute='via 10.0.3.254')
     h33 = net.addHost('h33', ip='10.0.3.33/24', defaultRoute='via 10.0.3.254')
     h34 = net.addHost('h34', ip='10.0.3.34/24', defaultRoute='via 10.0.3.254')
+    h35 = net.addHost('h35', ip='10.0.3.35/24', defaultRoute='via 10.0.3.254')
+    h36 = net.addHost('h36', ip='10.0.3.36/24', defaultRoute='via 10.0.3.254')
 
     info('*** Creating links\n')
     # Connect servers to switch a
@@ -67,18 +73,24 @@ def create_topology():
     net.addLink(h12, sb1)
     net.addLink(h13, sb1)
     net.addLink(h14, sb1)
+    net.addLink(h15, sb1)
+    net.addLink(h16, sb1)
 
     # Connect hosts to switch b2
     net.addLink(h21, sb2)
     net.addLink(h22, sb2)
     net.addLink(h23, sb2)
     net.addLink(h24, sb2)
+    net.addLink(h25, sb2)
+    net.addLink(h26, sb2)
 
     # Connect hosts to switch b3
     net.addLink(h31, sb3)
     net.addLink(h32, sb3)
     net.addLink(h33, sb3)
     net.addLink(h34, sb3)
+    net.addLink(h35, sb3)
+    net.addLink(h36, sb3)
 
     # Inter-switch links
     net.addLink(sa, core)
