@@ -12,7 +12,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TRAFFIC_SCRIPT="$SCRIPT_DIR/hosts/traffic_gen.py"
 CAPTURE_SCRIPT="$SCRIPT_DIR/capture_flows.py"
 HOSTS="h11 h12 h13 h14 h15 h16 h21 h22 h23 h24 h25 h26 h31 h32 h33 h34 h35 h36"
-START_DELAY=3
+START_DELAY=30
 ATTACK_MODE=false
 
 # Parse arguments
@@ -55,7 +55,7 @@ echo "Routing configured."
 echo ""
 echo "=== Step 2: Starting flow capture ==="
 CAPTURE_ARGS="--label normal"
-CAPTURE_DURATION=1800  # Default to no 30 minutes timeout
+CAPTURE_DURATION=1200  # Default to no 20 minutes timeout
 if [ "$ATTACK_MODE" = true ]; then
     CAPTURE_ARGS="$CAPTURE_ARGS --attack"
     echo "  Attack mode enabled: h11 flows will be labeled as 'malicious'"

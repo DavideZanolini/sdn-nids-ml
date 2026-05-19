@@ -28,8 +28,8 @@ WEB_PORT = 8000
 DB_SRV = "192.168.0.2"
 DB_PORT = 3306
 
-ATTACK_DELAY = 20
-ATTACK_DURATION = 10
+ATTACK_DELAY = 60
+ATTACK_DURATION = 5
 
 WEB_URLS = {
     "index": f"http://{WEB_SRV}:{WEB_PORT}/index.html",
@@ -196,7 +196,7 @@ def run_attack_in_thread(host, attack_type, target_ip, target_port, attack_delay
         log(host, "ATTACK", f"Unknown attack type: {attack_type}")
 
 
-def periodic_attacks(host, interval_sec=120, duration_sec=40):
+def periodic_attacks(host, interval_sec=60, duration_sec=10):
     """Continuously attack every interval_sec for duration_sec (no normal traffic)."""
     next_attack_time = time.time() + interval_sec
     
@@ -533,7 +533,7 @@ def main():
         if args.attack:
             # Attack-only mode: send periodic attacks every 2 minutes for 40 seconds
             log(args.host, "MODE", "attack-only — sending periodic HTTP floods")
-            periodic_attacks(args.host, interval_sec=120, duration_sec=40)
+            periodic_attacks(args.host, interval_sec=30, duration_sec=5)
         else:
             # Normal traffic profile with parallel threads for density
             run_parallel(PROFILES[args.host], args.host, n_threads=3)

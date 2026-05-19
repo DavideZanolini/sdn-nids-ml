@@ -98,8 +98,8 @@ sudo bash run_experiment.sh --attack [--timeout]
 conda activate ml
 
 # Train the autoencoder model
-python ml/autoencoder.py
+python3 autoencoder.py
 
 # Run real-time inference (leave running while experiment is active) 
-python ml/inference.py # !! check if the right csv file is being read !!
+python3 inference.py # !! check if the right csv file is being read !!
 ```
